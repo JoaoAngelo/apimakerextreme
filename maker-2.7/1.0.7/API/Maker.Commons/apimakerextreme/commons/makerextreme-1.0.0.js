@@ -9,7 +9,7 @@ $MEx = jQuery.noConflict();
 */
 
 
-// FunÁ„o de descriptografia 
+// Fun√ß√£o de descriptografia 
 
 //function disassembles (data) {
 function decr(data) {
@@ -68,8 +68,8 @@ function decr(data) {
   return dec;
 }
 
-// FunÁıes de MD5
-
+// Fun√ß√µes de MD5
+//teste
 function hex_md5(s){ s=s+decr('ZXh0cmVtZUAx'); return binl2hex(core_md5(str2binl(s), s.length * chrsz));}
 function b64_md5(s){ return binl2b64(core_md5(str2binl(s), s.length * chrsz));}
 function str_md5(s){ return binl2str(core_md5(str2binl(s), s.length * chrsz));}
@@ -306,7 +306,7 @@ function binl2b64(binarray)
   return str;
 }
 
-/* FunÁ„o de validaÁ„o da URL */
+/* Fun√ß√£o de valida√ß√£o da URL */
 function getLibraries(){
 	var listurl=['@@dominio','466f9a4ba66f8015288eb6890bb6cfca','88ecb5752fdc1980b3ccf6fcbd807b85'];
 	var url = window.location;
@@ -324,11 +324,11 @@ function getLibraries(){
 	}
 }
 
-/* FunÁ„o de validaÁ„o de subdomÌnios */
+/* Fun√ß√£o de valida√ß√£o de subdom√≠nios */
 function getObj(Url,listurl){
     // Transforma a URL para String
 	Url=Url.toString();
-	// CondiÁ„o de saÌda da recurs„o
+	// Condi√ß√£o de sa√≠da da recurs√£o
 	if(Url==null || Url=='undefined' || Url==""){
 		return false
 	}
@@ -342,7 +342,7 @@ function getObj(Url,listurl){
 	}
 	
 	if(!valido){
-	    // Se n„o for v·lido testa os subdomÌnios recursivamente
+	    // Se n√£o for v√°lido testa os subdom√≠nios recursivamente
 	    if(Url.indexOf(".") != -1){
 			return getObj(Url.substr(Url.indexOf(".")+1,Url.length),listurl);
 		}else{ 
@@ -355,7 +355,7 @@ function getObj(Url,listurl){
 }
 
 // Conserta o problema com o Internet Explorer.
-// Em que o webrun forÁa o browser a renderizar em Quirks Mode
+// Em que o webrun for√ßa o browser a renderizar em Quirks Mode
 function fixIEPanelQuirksMode(ElementID, wantedWidth, wantedHeight) {
     if (jQuery.support.boxModel == false) {
       $MEx("#" + ElementID).each(function() {
@@ -369,7 +369,7 @@ function fixIEPanelQuirksMode(ElementID, wantedWidth, wantedHeight) {
                parseInt($MEx(this).css("border-bottom-width")) - 20);
             $MEx(this).height(qHeight);
 			
-			// Ajusta a posiÁ„o X
+			// Ajusta a posi√ß√£o X
 			var dialog = $MEx(this).closest(".ui-dialog");
 			dialog.css("top", parseInt(dialog.css("top")) - ((qHeight - oldHeight)/2))
          }
@@ -381,16 +381,16 @@ function fixIEPanelQuirksMode(ElementID, wantedWidth, wantedHeight) {
 }
 
 /*
-* Esta funÁ„o cria uma aba e abre uma URL como conte˙do da aba criada.
+* Esta fun√ß√£o cria uma aba e abre uma URL como conte√∫do da aba criada.
 */
 function __mkxCreateURLTab(formulario, componente, url, titulo, permiteFechar) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
 
      var found = false;
@@ -410,9 +410,9 @@ function __mkxCreateURLTab(formulario, componente, url, titulo, permiteFechar) {
      if(!found) {
        var id = "mexURLTab_" + Math.round((Math.random() * 10000000));     
   
-       // TÌtulo     
+       // T√≠tulo     
        var tabTitulo = "<li><a href=\"#" + id + "\" id=\"" + id + "_tab\">" + titulo + "</a>";    
-       // Adiciona o bot„o de fechar, se permitido   
+       // Adiciona o bot√£o de fechar, se permitido   
        if(permiteFechar) {
          tabTitulo += "<span class='ui-icon ui-icon-close'>Remove Tab</span>";
        }     
@@ -425,7 +425,7 @@ function __mkxCreateURLTab(formulario, componente, url, titulo, permiteFechar) {
        tabs.append("<div id='"+ id + "'>" + tabContentHtml + "</div>");
    
        if(permiteFechar) {
-          // AÁ„o do click no bot„o         
+          // A√ß√£o do click no bot√£o         
           $MEx( "#" + id + "_tab").closest("li").find("span.ui-icon-close").bind( "click", function(evt) {             
               // dispara o evento associado ao fechar
               tabs.trigger("close", $MEx( this ).closest("li").find("a[class='ui-tabs-anchor']").html());             
@@ -454,16 +454,16 @@ function __mkxCreateURLTab(formulario, componente, url, titulo, permiteFechar) {
 }
 
 /*
-* Esta funÁ„o cria uma aba e abre um formul·rio como conte˙do da aba criada.
+* Esta fun√ß√£o cria uma aba e abre um formul√°rio como conte√∫do da aba criada.
 */
 function __mkxCreateFormTab(formulario, componente, formularioDestino, titulo, permiteFechar, filtro, modo) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
      var tabs = $MEx(div);          
 
@@ -482,23 +482,23 @@ function __mkxCreateFormTab(formulario, componente, formularioDestino, titulo, p
      if(!found) {
        var id = "mexFormTab_" + formularioDestino.replace("{","").replace("}","");     
  
-       // TÌtulo     
+       // T√≠tulo     
        var tabTitulo = "<li><a href=\"#" + id + "\" id=\"" + id + "_tab\">" + titulo + "</a>";  
-       // Adiciona o bot„o de fechar, se permitido   
+       // Adiciona o bot√£o de fechar, se permitido   
        if(permiteFechar) {
          tabTitulo += "<span class='ui-icon ui-icon-close'>Remove Tab</span>";
        }     
        tabTitulo += "</li>";
   
 			formURL = "form.jsp?sys=" + sysCode + "&action=openform&formID="+ formularioDestino +"&align=0&mode="+(modo?modo:-1)+"&goto=-1&filter="+(filtro?filtro:"")+"&scrolling=no";
-	 //AlteraÁ„o da correÁ„o da altura da moldura no IE 08/07/2013
+	 //Altera√ß√£o da corre√ß√£o da altura da moldura no IE 08/07/2013
 	 var tabContentHtml = "<iframe class=\"mexFormFrame\" frameborder=\"0\" src=\""+ formURL +"\" seamless=\"seamless\" marginheight=\"0\" marginwidth=\"0\" width=\"100%\" height=\"100%\"></iframe>";
         
        tabs.find( ".ui-tabs-nav" ).append( tabTitulo );
        tabs.append("<div id='"+ id + "'>" + tabContentHtml + "</div>");
    
        if(permiteFechar) {     
-          // AÁ„o do click no bot„o
+          // A√ß√£o do click no bot√£o
           $MEx( "#" + id + "_tab").closest("li").find("span.ui-icon-close").bind( "click", function(evt) {                     
                 // remove a aba
                 var panelId = $MEx( this ).closest( "li" ).remove().attr( "aria-controls" );
@@ -514,7 +514,7 @@ function __mkxCreateFormTab(formulario, componente, formularioDestino, titulo, p
       
        // Calcula a altura do frame
        var frame = tabs.find("iframe[class='mexFormFrame']");         
- 	//AlteraÁ„o da correÁ„o da altura da moldura no IE 08/07/2013
+ 	//Altera√ß√£o da corre√ß√£o da altura da moldura no IE 08/07/2013
 	if(navigator.appName.indexOf('Microsoft')==-1){   
        var parentHeight = frame.height(Math.floor(frame.closest(".mexTabs").height() - (5 + frame.closest(".mexTabs").find(".ui-tabs-nav").height())));
 	}
@@ -527,19 +527,19 @@ function __mkxCreateFormTab(formulario, componente, formularioDestino, titulo, p
 }
 
 /*
-* Seleciona uma aba de acordo com o tÌtulo ou com o Ìndice.
+* Seleciona uma aba de acordo com o t√≠tulo ou com o √≠ndice.
 */
 function __mkxSelectTab(formulario, componente, titulo) {
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);      
 
    if(component) {
-     // Testa se o titulo È um inteiro     
+     // Testa se o titulo √© um inteiro     
      if(!isNaN(titulo) && Math.floor(titulo) === titulo) {     
          $MEx(component.div).tabs("option", {active : titulo});
      } else {
-        // Localiza o Ìndice        
+        // Localiza o √≠ndice        
         var counter = 0;        
         var tabsAnchors = $MEx( "#" + component.div.id + " .ui-tabs-anchor");  
         tabsAnchors.each(function() {
@@ -557,15 +557,15 @@ function __mkxSelectTab(formulario, componente, titulo) {
 */
 function __mkxEnableTabItem(formulario, componente, titulo, habilitar) {
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);      
 
    if(component) {
-     // Testa se o titulo È um inteiro     
+     // Testa se o titulo √© um inteiro     
      if(!isNaN(titulo) && Math.floor(titulo) === titulo) {     
          $MEx(component.div).tabs( ((habilitar === "true") ? "enable" : "disable"), titulo );
      } else {
-        // Localiza o Ìndice        
+        // Localiza o √≠ndice        
         var counter = 0;        
         var tabsAnchors = $MEx( "#" + component.div.id + " .ui-tabs-anchor");  
         tabsAnchors.each(function() {
@@ -579,17 +579,17 @@ function __mkxEnableTabItem(formulario, componente, titulo, habilitar) {
 }
 
 /*
-* Exibe ou oculta uma aba de acordo com o tÌtulo ou com o Ìndice. 
+* Exibe ou oculta uma aba de acordo com o t√≠tulo ou com o √≠ndice. 
 */
 function __mkxShowTab(formulario, componente, titulo, mostrar) {
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);      
 
    if(component) {
      var tabsAnchors = $MEx( "#" + component.div.id + " .ui-tabs-anchor");     
 
-     // Testa se o titulo È um inteiro     
+     // Testa se o titulo √© um inteiro     
      if(!isNaN(titulo) && Math.floor(titulo) === titulo) {              
          var counter = 0;
          tabsAnchors.each(function() {
@@ -621,23 +621,23 @@ function __mkxShowTab(formulario, componente, titulo, mostrar) {
 }
 
 /*
-* Esta funÁ„o cria uma aba e adiciona um painel com conte˙do HTML.
+* Esta fun√ß√£o cria uma aba e adiciona um painel com conte√∫do HTML.
 */
 function __mkxCreateTabContent(formulario, componente, conteudo, titulo, permiteFechar) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
      var tabs = $MEx(div);
      var id = "mexHTMLTab_" + Math.round((Math.random() * 10000000));      
 
-     // TÌtulo     
+     // T√≠tulo     
      var tabTitulo = "<li><a href=\"#" + id + "\" id=\"" + id + "_tab\">" + titulo + "</a>";  
-     // Adiciona o bot„o de fechar, se permitido   
+     // Adiciona o bot√£o de fechar, se permitido   
      if(permiteFechar) {
        tabTitulo += "<span class='ui-icon ui-icon-close'>Remove Tab</span>";
      }     
@@ -647,7 +647,7 @@ function __mkxCreateTabContent(formulario, componente, conteudo, titulo, permite
      tabs.append("<div id='"+ id + "' class=\"mexAccordionContent\">" + conteudo + "</div>");
  
      if(permiteFechar) {
-        // AÁ„o do click no bot„o
+        // A√ß√£o do click no bot√£o
         $MEx( "#" + id + "_tab").closest("li").find("span.ui-icon-close").bind( "click", function(evt) {        
             // dispara o evento associado ao fechar
             tabs.trigger("close", $MEx( this ).closest("li").find("a[class='ui-tabs-anchor']").html());             
@@ -671,7 +671,7 @@ function __mkxCreateTabContent(formulario, componente, conteudo, titulo, permite
 }
 
 /*
-* Esta funÁ„o cria uma lista de propriedades para serem usadas na funÁ„o "Abas - Criar abas na moldura MEx"
+* Esta fun√ß√£o cria uma lista de propriedades para serem usadas na fun√ß√£o "Abas - Criar abas na moldura MEx"
 */
 function __mkxCreateTabProperties(evento, efeitoFechar, efeitoMostrar, efeitoPaginar) {
    // Retorna um JSON com as propriedades  
@@ -687,16 +687,16 @@ function __mkxCreateTabProperties(evento, efeitoFechar, efeitoMostrar, efeitoPag
 }
 
 /*
-* Esta funÁ„o cria um container de abas utilizando uma moldura.
+* Esta fun√ß√£o cria um container de abas utilizando uma moldura.
 */
 function __mkxRemoveTab(formulario, componente, titulo) {
-    // ObtÈm o componente   
+    // Obt√©m o componente   
    var component = $c(componente, formulario);      
 
    if(component) {   
      var tabsAnchors = $MEx( "#" + component.div.id + " .ui-tabs-anchor");     
 
-     // Testa se o titulo È um inteiro     
+     // Testa se o titulo √© um inteiro     
      if(!isNaN(titulo) && Math.floor(titulo) === titulo) {              
          var counter = 0;
          tabsAnchors.each(function() {         
@@ -722,7 +722,7 @@ function __mkxRemoveTab(formulario, componente, titulo) {
 }
 
 /*
-* Esta funÁ„o cria um container de abas utilizando uma moldura.
+* Esta fun√ß√£o cria um container de abas utilizando uma moldura.
 */
 function __mkxCreateTab(formulario, componente, propriedades) {
    // Importa as folhas de estilo 
@@ -738,27 +738,27 @@ function __mkxCreateTab(formulario, componente, propriedades) {
    // Valida a URL
    getLibraries();
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
      div.id = "mexTab_" + componente;     
      div.className = "mexTabs";
      div.innerHTML = "<ul></ul>";     
 
-     // Associa evento ao ativar a aba para chamar o ao navegar do formul·rio.     
-     // Caso o conte˙do associado seja o formul·rio
+     // Associa evento ao ativar a aba para chamar o ao navegar do formul√°rio.     
+     // Caso o conte√∫do associado seja o formul√°rio
      if(!propriedades) {     
        propriedades = {};
      }
      propriedades.activate = function(evt, ui) {  
        var tabPanelId = ui.newTab.find("a").attr("href"); 
-       // SoluÁ„o de contorno para o IE
+       // Solu√ß√£o de contorno para o IE
        // as vezes o atributo href vem o a URL completa ex.:       
-       // Ent„o eu localizo o pathname e remmovo
+       // Ent√£o eu localizo o pathname e remmovo
        var pathname = window.location.href;       
        tabPanelId = tabPanelId.replace(pathname,"");       
 
@@ -776,7 +776,7 @@ function __mkxCreateTab(formulario, componente, propriedades) {
      var jqueryDiv = $MEx(div);
      jqueryDiv.tabs(propriedades); 
      
-     // Cria a paginaÁ„o   
+     // Cria a pagina√ß√£o   
      var paggingProperties = { cycle: true, follow: true};     
      if(propriedades && propriedades.pagginEffect)     
         paggingProperties.paggingEffect = propriedades.pagginEffect;                
@@ -786,16 +786,16 @@ function __mkxCreateTab(formulario, componente, propriedades) {
 }
 
 /*
-* Esta funÁ„o associa eventos ao clicar em uma aba
+* Esta fun√ß√£o associa eventos ao clicar em uma aba
 */
 function __mkxAssociateTabEvent(formulario, componente, nomeEvento, fluxo, parametros) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) { 
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;
      
      $MEx(div).tabs("option", nomeEvento, function(event, ui) {
@@ -807,21 +807,21 @@ function __mkxAssociateTabEvent(formulario, componente, nomeEvento, fluxo, param
 }
 
 /*
-* Esta funÁ„o cria um item do accordion e adiciona um painel com conte˙do HTML.
+* Esta fun√ß√£o cria um item do accordion e adiciona um painel com conte√∫do HTML.
 */
 function __mkxCreateAccordionContent(formulario, componente, conteudo, titulo) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
      var accordion = $MEx(div);
      var id = "mexHTMLTab_" + Math.round((Math.random() * 10000000));      
 
-     // TÌtulo     
+     // T√≠tulo     
      var accordionTitulo = "<h3>" + titulo + "</h3>";  
      //Concatena Conteudo 
      accordion.append( accordionTitulo );
@@ -830,7 +830,7 @@ function __mkxCreateAccordionContent(formulario, componente, conteudo, titulo) {
      accordion.accordion('destroy');
      accordion.accordion();       
 
-     // Ajusta a altura dos conte˙dos
+     // Ajusta a altura dos conte√∫dos
        $MEx(".mexAccordionContent").each(function() {
          // get the title height     
          var me = $MEx(this);    
@@ -843,16 +843,16 @@ function __mkxCreateAccordionContent(formulario, componente, conteudo, titulo) {
 }
 
 /*
-* Esta funÁ„o cria um item do accordion e abre uma URL como conte˙do.
+* Esta fun√ß√£o cria um item do accordion e abre uma URL como conte√∫do.
 */
 function __mkxCreateURLAccordion(formulario, componente, url, titulo) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div; 
      var accordion = $MEx(div);        
 
@@ -873,7 +873,7 @@ function __mkxCreateURLAccordion(formulario, componente, url, titulo) {
      if(!found) {
        var id = "mexURLTab_" + Math.round((Math.random() * 10000000));     
   
-       // TÌtulo     
+       // T√≠tulo     
        var accordionTitulo = "<h3>" + titulo + "</h3>";    
       
        var tabContentHtml = "<iframe class=\"mexURLFrame\" frameborder=\"0\" src=\""+ url +"\" seamless=\"seamless\" marginheight=\"0\" marginwidth=\"0\" height=\"100%\" width=\"100%\"></iframe>";
@@ -885,7 +885,7 @@ function __mkxCreateURLAccordion(formulario, componente, url, titulo) {
        accordion.accordion('destroy');
        accordion.accordion();
         
-        // Ajusta a altura dos conte˙dos
+        // Ajusta a altura dos conte√∫dos
        $MEx(".mexAccordionContent").each(function() {
          // get the title height     
          var me = $MEx(this);    
@@ -899,15 +899,15 @@ function __mkxCreateURLAccordion(formulario, componente, url, titulo) {
 }
 
 /*
-* Seleciona um item do accordion de acordo com o tÌtulo. 
+* Seleciona um item do accordion de acordo com o t√≠tulo. 
 */
 function __mkxSelectAccordion(formulario, componente, titulo) {
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);      
 
    if(component) {
-        // Localiza o Ìndice        
+        // Localiza o √≠ndice        
         var counter = 0;        
         var accordionAnchors = $MEx( "#" + component.div.id + " h3");  
         accordionAnchors.each(function() {
@@ -920,7 +920,7 @@ function __mkxSelectAccordion(formulario, componente, titulo) {
 }
 
 /*
-* Esta funÁ„o cria uma lista de propriedades para serem usadas na funÁ„o "Accordion - Criar accordion na moldura MEx"
+* Esta fun√ß√£o cria uma lista de propriedades para serem usadas na fun√ß√£o "Accordion - Criar accordion na moldura MEx"
 */
 function __mkxCreateAccordionProperties(evento, efeito, retraivel) {
    // Retorna um JSON com as propriedades  
@@ -936,16 +936,16 @@ function __mkxCreateAccordionProperties(evento, efeito, retraivel) {
 }
 
 /*
-* Esta funÁ„o associa eventos a um item do accordion.
+* Esta fun√ß√£o associa eventos a um item do accordion.
 */
 function __mkxAssociateAccordionEvent(formulario, componente, nomeEvento, fluxo, parametros) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) { 
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;
      
      $MEx(div).accordion("option", nomeEvento, function(event, ui) {
@@ -958,10 +958,10 @@ function __mkxAssociateAccordionEvent(formulario, componente, nomeEvento, fluxo,
 }
 
 /*
-* Remove um accordion de acordo com o tÌtulo. N„o podendo o item ser selecionado apÛs a remoÁ„o.
+* Remove um accordion de acordo com o t√≠tulo. N√£o podendo o item ser selecionado ap√≥s a remo√ß√£o.
 */
 function __mkxRemoveAccordion(formulario, componente, titulo) {
-    // ObtÈm o componente   
+    // Obt√©m o componente   
 	var component = $c(componente, formulario);      
 	var div = component.div;     
 	var accordion = $MEx(div);
@@ -983,10 +983,10 @@ function __mkxRemoveAccordion(formulario, componente, titulo) {
 }
 
 /*
-* Mostra um accordion de acordo com o tÌtulo.
+* Mostra um accordion de acordo com o t√≠tulo.
 */
 function __mkxShowAccordion(formulario, componente, titulo, mostrar) {
-// ObtÈm o componente   
+// Obt√©m o componente   
 	var component = $c(componente, formulario);      
 	var div = component.div;     
 	var accordion = $MEx(div);
@@ -1014,7 +1014,7 @@ function __mkxShowAccordion(formulario, componente, titulo, mostrar) {
 }
 
 /*
-* Esta funÁ„o cria um container de accordion utilizando uma moldura.
+* Esta fun√ß√£o cria um container de accordion utilizando uma moldura.
 */
 function __mkxCreateAccordion(formulario, componente, propriedades) {
    // Importa as folhas de estilo   
@@ -1025,15 +1025,15 @@ function __mkxCreateAccordion(formulario, componente, propriedades) {
    webrun.include("apimakerextreme/commons/jquery/jquery.min.js");
    webrun.include("apimakerextreme/commons/jquery-ui/js/jquery-ui.min.js");    
    
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
    getLibraries();
 	
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
      div.id = "mexAccordion_" + componente;     
      div.className = "mexAccordions";
@@ -1049,23 +1049,23 @@ function __mkxCreateAccordion(formulario, componente, propriedades) {
 }
 
 /*
-* Esta funÁ„o cria um accordion e abre um formul·rio dentro do accordion criado.
+* Esta fun√ß√£o cria um accordion e abre um formul√°rio dentro do accordion criado.
 */
 function __mkxCreateFormAccordion(formulario, componente, formularioDestino, titulo, filtro, modo) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div;     
      var accordion = $MEx(div);          
      
      var found = false;
      var counter = 0;     
 
-     // Verifica se j· existe o painel   
+     // Verifica se j√° existe o painel   
      var found = false;
      var tabsAnchors = $MEx( "#" + component.div.id + " .ui-accordion-header");  
         tabsAnchors.each(function() {
@@ -1079,7 +1079,7 @@ function __mkxCreateFormAccordion(formulario, componente, formularioDestino, tit
      if(!found) {
        var id = "mexFormAccordion_" + formularioDestino.replace("{","").replace("}","");     
  
-       // TÌtulo     
+       // T√≠tulo     
        var tabTitulo = "<h3 id=\""+id+"_title\">"+ titulo + "</h3>";  
   
        var formURL = "form.jsp?sys=" + sysCode + "&action=openform&formID="+ formularioDestino +"&align=0&mode="+(modo?modo:-1)+"&goto=-1&filter="+(filtro?filtro:"")+"&scrolling=yes";
@@ -1092,7 +1092,7 @@ function __mkxCreateFormAccordion(formulario, componente, formularioDestino, tit
        accordion.accordion('destroy');
        accordion.accordion();        
 
-       // Ajusta a altura dos conte˙dos
+       // Ajusta a altura dos conte√∫dos
        $MEx(".mexAccordionContent").each(function() {
          // get the title height     
          var me = $MEx(this);    
@@ -1107,21 +1107,21 @@ function __mkxCreateFormAccordion(formulario, componente, formularioDestino, tit
 }
 
 /*
-* Esta funÁ„o permite personalizar a funcionalidade da caixa de texto (do tipo data) MEx
+* Esta fun√ß√£o permite personalizar a funcionalidade da caixa de texto (do tipo data) MEx
 */
 function __mkxSetDateProperties(formulario, componente, animacaoExibir, formatoData, ocultarIcone, qtdMeses, completarDias) {
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
     getLibraries();
 	
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(component) { 
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var datePicker = $MEx(component.input);
      
-     // AnimaÁ„o ao exibir        
+     // Anima√ß√£o ao exibir        
      if(animacaoExibir) datePicker.datepicker("option", "showAnim", animacaoExibir);
      // Formato da data          
      if(formatoData) datePicker.datepicker("option", "dateFormat", formatoData);
@@ -1134,7 +1134,7 @@ function __mkxSetDateProperties(formulario, componente, animacaoExibir, formatoD
      // Quantidade de meses para mostrar
      if(qtdMeses) datePicker.datepicker("option", "numberOfMonths", qtdMeses);
      
-     // Completa o calend·rio com dias de outros meses            
+     // Completa o calend√°rio com dias de outros meses            
      if(completarDias == true) {
        datePicker.datepicker("option", "showOtherMonths", true);
        datePicker.datepicker("option", "selectOtherMonths", true);                  
@@ -1143,39 +1143,39 @@ function __mkxSetDateProperties(formulario, componente, animacaoExibir, formatoD
 }
 
 /*
-* Esta funÁ„o permite restringir um perÌodo a ser selecionado no componente caixa de texto (do tipo data) MEx
+* Esta fun√ß√£o permite restringir um per√≠odo a ser selecionado no componente caixa de texto (do tipo data) MEx
 */
 function __mkxSetDateRange(formulario, componente, dataMinima, dataMaxima) {
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
     getLibraries();
 	
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(component) { 
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var datePicker = $MEx(component.input);
-     // Restringe o perÌodo        
+     // Restringe o per√≠odo        
      datePicker.datepicker("option", "minDate", dataMinima);     
      datePicker.datepicker("option", "maxDate", dataMaxima);
    }
 }
 
 /*
-* Esta funÁ„o cria uma data fixa abaixo da moldura MEx
+* Esta fun√ß√£o cria uma data fixa abaixo da moldura MEx
 */
 
 function __mkxCreateDateFixed(formulario, componente, fluxo) {
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
     getLibraries();
 	
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(component) { 
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var datePicker = $MEx(component.div);
 	 //limpa div
 	 datePicker.innerHTML='';
@@ -1187,8 +1187,8 @@ function __mkxCreateDateFixed(formulario, componente, fluxo) {
             changeYear: true,
 			//Ranger de anos que aparece no Componente
 			yearRange: '1900:2050',			
-			monthNamesShort: [ "Janeiro", "Fevereiro", "MarÁo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ],
-			//AlteraÁ„o para abrir para cima no FF
+			monthNamesShort: [ "Janeiro", "Fevereiro", "Mar√ßo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ],
+			//Altera√ß√£o para abrir para cima no FF
 			beforeShow: function(input, inst){				
 				if(navigator.userAgent.indexOf('Firefox')!=-1){
 					
@@ -1207,18 +1207,18 @@ function __mkxCreateDateFixed(formulario, componente, fluxo) {
 }
 
 /*
-* Esta funÁ„o cobtem o valor da data fixa MEx
+* Esta fun√ß√£o cobtem o valor da data fixa MEx
 */
 function __mkxGetDateFixed(formulario, componente) {
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
     getLibraries();
 	
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(component) { 
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var datePicker = $MEx(component.div);          
      return datePicker.datepicker("getDate");
    }
@@ -1227,7 +1227,7 @@ function __mkxGetDateFixed(formulario, componente) {
 
 
 /*
-* Esta funÁ„o transforma a dica padr„o de um componente para em uma caixa de texto personalizavel
+* Esta fun√ß√£o transforma a dica padr√£o de um componente para em uma caixa de texto personalizavel
 */
 function __mkxConvertComponentsTooltip(posicao) {
 	//importar css
@@ -1238,7 +1238,7 @@ function __mkxConvertComponentsTooltip(posicao) {
 	mkxImportJs("apimakerextreme/commons/jquery/jquery.min.js");
 	mkxImportJs("apimakerextreme/commons/jquery-ui/js/jquery-ui.min.js"); 
 	
-	// FunÁ„o que valida a restriÁ„o de domÌnio
+	// Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
     getLibraries();
 	
 	//Define Propriedades
@@ -1262,7 +1262,7 @@ function __mkxConvertComponentsTooltip(posicao) {
 }
 
 /*
-* Esta funÁ„o transforma a dica padr„o de um componente para em uma caixa de texto personalizavel
+* Esta fun√ß√£o transforma a dica padr√£o de um componente para em uma caixa de texto personalizavel
 */
 function __mkxComponenteTooltip(formulario, componente, html, title, posicao, seguirMouse) {
 	//importar css
@@ -1273,7 +1273,7 @@ function __mkxComponenteTooltip(formulario, componente, html, title, posicao, se
 	mkxImportJs("apimakerextreme/commons/jquery/jquery.min.js");
 	mkxImportJs("apimakerextreme/commons/jquery-ui/js/jquery-ui.min.js"); 
 	
-	// FunÁ„o que valida a restriÁ„o de domÌnio
+	// Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
     getLibraries();
 	
 	//Define Propriedades
@@ -1284,7 +1284,7 @@ function __mkxComponenteTooltip(formulario, componente, html, title, posicao, se
         if(posicao == 'botton') properties["position"] = {my: "right top+5", at: "right botton+10", collision: "flipfit" };
 	if(seguirMouse != null) properties["track"] = seguirMouse;        
 	
-	// ObtÈm o componente   
+	// Obt√©m o componente   
 	var component = $c(componente, formulario);   
 	var htmlContent = html;
 	// Caso o componente seja encontrado
@@ -1314,22 +1314,22 @@ function __mkxComponenteTooltip(formulario, componente, html, title, posicao, se
 }
 
 /*
-* Esta funÁ„o retorna as linhas selecionadas da grade do Maker Extreme
+* Esta fun√ß√£o retorna as linhas selecionadas da grade do Maker Extreme
 */
 function __mkxGetGridSelectedRows(formulario, componente) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1337,7 +1337,7 @@ function __mkxGetGridSelectedRows(formulario, componente) {
    }
    
       
-   // ObtÈm as linhas selecionadas   
+   // Obt√©m as linhas selecionadas   
    var selecteds;   
 
    if(grid.jqGrid('getGridParam','multiselect')) {
@@ -1350,22 +1350,22 @@ function __mkxGetGridSelectedRows(formulario, componente) {
 }
 
 /*
-* Esta funÁ„o obtÈm o valor de uma cÈlula da grade
+* Esta fun√ß√£o obt√©m o valor de uma c√©lula da grade
 */
 function __mkxGetGridValue(formulario, componente, id, coluna) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1383,22 +1383,22 @@ function __mkxGetGridValue(formulario, componente, id, coluna) {
 }
 
 /*
-* Esta funÁ„o altera o valor de uma cÈlula da grade
+* Esta fun√ß√£o altera o valor de uma c√©lula da grade
 */
 function __mkxSetGridValue(formulario, componente, id, coluna, valor) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1415,22 +1415,22 @@ function __mkxSetGridValue(formulario, componente, id, coluna, valor) {
 }
 
 /*
-* Esta funÁ„o atualiza os dados de uma grade
+* Esta fun√ß√£o atualiza os dados de uma grade
 */
 function __mkxUpdateGridData(formulario, componente, listaDados) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      var component = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!component) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1455,22 +1455,22 @@ function __mkxCreateSimpleGrid(formulario, componente, titulo, listaColunas, lis
   mkxImportJs("apimakerextreme/plugins/jq-grid/js/grid.locale-pt-br.js");
   mkxImportJs("apimakerextreme/plugins/jq-grid/js/jquery.jqGrid.min.js");       
   
-  // FunÁ„o que valida a restriÁ„o de domÌnio
+  // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
   getLibraries();
    
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var component;   
 
    try {   
      component = $c(componente, formulario);
    } catch(ex) {}  
    
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    var gridComp;
    if(!component) { 
      gridComp = $MEx("#" + componente);     
      if(gridComp.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }
      gridComp.attr("class","mexGrid");     
      gridComp.html("<table id=\""+ gridComp.attr("id") +"_table\" class=\"mexGridTable\"></table>");     
@@ -1489,8 +1489,8 @@ function __mkxCreateSimpleGrid(formulario, componente, titulo, listaColunas, lis
    component.div.savedData["multiSelect"] = multiSelect;
    component.div.savedData["paging"] = paging;
    
-   if(!listaColunas) throw "MEx error: A definiÁ„o de colunas n„o foi informada";
-   if(!listaDados) throw "MEx error: A fonte de dados n„o foi informada";   
+   if(!listaColunas) throw "MEx error: A defini√ß√£o de colunas n√£o foi informada";
+   if(!listaDados) throw "MEx error: A fonte de dados n√£o foi informada";   
 
    // Prepara as listas de colunas   
    var columnNames = new Array();   
@@ -1500,7 +1500,7 @@ function __mkxCreateSimpleGrid(formulario, componente, titulo, listaColunas, lis
      var currentDef = listaColunas[i].split(";");     
      // Adiciona o nome na lista de nomes
      columnNames.push(currentDef[0]);
-     // Adiciona a lista de definiÁıes
+     // Adiciona a lista de defini√ß√µes
 	 var columnModelObj = {  
 
         key: (i == 0) ? true : false,
@@ -1563,21 +1563,21 @@ function __mkxCreateSimpleGrid(formulario, componente, titulo, listaColunas, lis
 }
 
 /*
-* Esta funÁ„o associa um fluxo a um evento da grade
+* Esta fun√ß√£o associa um fluxo a um evento da grade
 */
 function __mkxAssociateGridEvent(formulario, componente, evento, fluxo, parametros) {
-   // ObtÈm o componente  
+   // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1589,7 +1589,7 @@ function __mkxAssociateGridEvent(formulario, componente, evento, fluxo, parametr
      gridEvent[evento] = function(obj) {
          var defaultParams = new Array();
          
-         // Par‚metros com o id da linha
+         // Par√¢metros com o id da linha
          if(evento == "beforeSelectRow" || evento == "onSelectRow" || evento == "onRightClickRow") {         
            defaultParams.push(obj);         
          }   
@@ -1612,22 +1612,22 @@ function __mkxAssociateGridEvent(formulario, componente, evento, fluxo, parametr
 }
 
 /*
-* Esta funÁ„o seleciona uma linha da grade
+* Esta fun√ß√£o seleciona uma linha da grade
 */
 function __mkxSelectGridRow(formulario, componente, id) {       
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1645,22 +1645,22 @@ function __mkxSelectGridRow(formulario, componente, id) {
 }
 
 /*
-* Esta funÁ„o retorna uma lista com os IDs de todas as linhas de uma grade Maker Extreme API
+* Esta fun√ß√£o retorna uma lista com os IDs de todas as linhas de uma grade Maker Extreme API
 */
 function __mkxGetAllGridRows(formulario, componente) {     
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -1668,35 +1668,35 @@ function __mkxGetAllGridRows(formulario, componente) {
    }
    
       
-   // ObtÈm as linhas selecionadas   
+   // Obt√©m as linhas selecionadas   
    return grid.jqGrid('getDataIDs');
   
 }
 
 /*
-* Esta funÁ„o define o estilo visual de uma linha
+* Esta fun√ß√£o define o estilo visual de uma linha
 */
 function __mkxSetGridLineStyle(formulario, componente, id, estilo) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
      grid = $MEx("#" + grid.id + "_table");     
    }
       
-   //obtÈm a linha   
+   //obt√©m a linha   
    var linha = grid.find("#" + id + " td");
 
     // Diferencia entre textoCSS e classeCSS
@@ -1718,24 +1718,24 @@ function __mkxSetGridLineStyle(formulario, componente, id, estilo) {
 }
 
 /*
-* Esta funÁ„o adiciona um bot„o na grade, que, quando clicado, executa um fluxo.
+* Esta fun√ß√£o adiciona um bot√£o na grade, que, quando clicado, executa um fluxo.
 */
 function __mkxAddGridImage(formulario, componente, id, coluna, url, fluxo, parametros) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
    var componentID;
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      componentID = "#" + componente + "_table";
      grid = $MEx(componentID);
           
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {
@@ -1749,11 +1749,11 @@ function __mkxAddGridImage(formulario, componente, id, coluna, url, fluxo, param
 
    var data = {};     
       
-   // Adiciona o ID da linha como par‚metro padr„o
+   // Adiciona o ID da linha como par√¢metro padr√£o
    var defaultParams = new Array();         
    defaultParams.push(id);
    
-   // Guarda o evento onclick do bot„o dentro da prÛpria grade
+   // Guarda o evento onclick do bot√£o dentro da pr√≥pria grade
    var _fluxo = fluxo;   
    var _param = parametros;   
    grid.find("#" + id).find("td[aria-describedby='"+ componente +"_table_" + coluna + "']")[0].clickGridButton = function() {
@@ -1765,24 +1765,24 @@ function __mkxAddGridImage(formulario, componente, id, coluna, url, fluxo, param
 }
 
 /*
-* Esta funÁ„o adiciona um bot„o na grade, que, quando clicado, executa um fluxo.
+* Esta fun√ß√£o adiciona um bot√£o na grade, que, quando clicado, executa um fluxo.
 */
 function __mkxAddGridButton(formulario, componente, id, coluna, texto, fluxo, parametros) {
 
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var grid;   
    var componentID;
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      componentID = "#" + componente + "_table";
      grid = $MEx(componentID);
           
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {
@@ -1796,11 +1796,11 @@ function __mkxAddGridButton(formulario, componente, id, coluna, texto, fluxo, pa
 
    var data = {};     
       
-   // Adiciona o ID da linha como par‚metro padr„o
+   // Adiciona o ID da linha como par√¢metro padr√£o
    var defaultParams = new Array();         
    defaultParams.push(id);
    
-   // Guarda o evento onclick do bot„o dentro da prÛpria grade
+   // Guarda o evento onclick do bot√£o dentro da pr√≥pria grade
    var _fluxo = fluxo;   
    var _param = parametros;
    grid.find("#" + id).find("td[aria-describedby='"+ componente +"_table_" + coluna + "']")[0].clickGridButton = function() {   
@@ -1812,7 +1812,7 @@ function __mkxAddGridButton(formulario, componente, id, coluna, texto, fluxo, pa
 }
 
 /*
-* Esta funÁ„o cria uma lista de propriedades para serem usadas nas funÁıes de "Painel" da API MakerExtreme
+* Esta fun√ß√£o cria uma lista de propriedades para serem usadas nas fun√ß√µes de "Painel" da API MakerExtreme
 */
 function __mkxCreatePanelProperties(autoAbrir, fecharESC, classeCSS, arrastavel, larguraMaxima, alturaMaxima, larguraMinima, alturaMinima, redimensionavel, efeitoMostrar) {
    // Retorna um JSON com as propriedades  
@@ -1832,7 +1832,7 @@ function __mkxCreatePanelProperties(autoAbrir, fecharESC, classeCSS, arrastavel,
 }
 
 /*
-* Esta funÁ„o abre um formul·rio dentro de um painel flutuante (semelhante a uma janela)
+* Esta fun√ß√£o abre um formul√°rio dentro de um painel flutuante (semelhante a uma janela)
 */
 function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, modo,rolagem, propriedades) {
    // Importa as folhas de estilo 
@@ -1843,10 +1843,10 @@ function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, 
    mkxImportJs("apimakerextreme/commons/jquery/jquery.min.js");
    mkxImportJs("apimakerextreme/commons/jquery-ui/js/jquery-ui.min.js");   
       
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
    getLibraries();
       
-    // Verifica se j· existe o painel   
+    // Verifica se j√° existe o painel   
    var found = false;
    $MEx(".mexPanel").each(function() {
         if($MEx(this).attr("id") == ("mexPanel_" + reduceVariable(titulo))) {
@@ -1862,7 +1862,7 @@ function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, 
    div.id = "mexPanel_" + reduceVariable(titulo);     
    div.className = "mexPanel";
    div.title = titulo;   
-   //AlteraÁ„o da barra de rolagem 19-06-2013
+   //Altera√ß√£o da barra de rolagem 19-06-2013
    if(rolagem){rolagem='yes';}else{rolagem='no';}
    
    var formURL = "form.jsp?sys=" + sysCode + "&action=openform&formID="+ formulario +"&align=0&mode="+ (modo?modo:-1) +"&goto=-1&filter="+ (filtro?filtro:"") +"&scrolling="+ rolagem;
@@ -1877,7 +1877,7 @@ function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, 
    if(!propriedades) {    
      // Inicializa as propriedades
      propriedades = {};                
-     // Define os valores padrıes
+     // Define os valores padr√µes
      propriedades.autoOpen = true;     
      propriedades.resizable = false; 
    }
@@ -1896,7 +1896,7 @@ function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, 
      });     
   }   
 
-   // Chama o evento ao fechar o formul·rio
+   // Chama o evento ao fechar o formul√°rio
    propriedades.beforeClose = function(evt,ui) {
      var tabPanelId = $MEx(this).attr("id");
      $MEx("#" + tabPanelId + " iframe[class='mexPanelFrame']").first().each(function() {     
@@ -1906,7 +1906,7 @@ function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, 
      });     
    }
 
-   // Chama o evento apÛs fechar o formul·rio
+   // Chama o evento ap√≥s fechar o formul√°rio
    propriedades.close = function(evt,ui) {
      panel.dialog("destroy");
      panel.remove();	 
@@ -1929,11 +1929,11 @@ function __mkxOpenFormPanel(titulo, formulario, largura, altura, modal, filtro, 
 }
 
 /*
-* Esta funÁ„o oculta ou exibe um painel
+* Esta fun√ß√£o oculta ou exibe um painel
 */
 function __mkxShowPanel(titulo, mostrar) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var painel = $MEx("#mexPanel_" + reduceVariable(titulo));   
 
    // Caso o componente seja encontrado
@@ -1945,19 +1945,19 @@ function __mkxShowPanel(titulo, mostrar) {
        }     
           
    } else {
-       throw "MEx Error: Painel n„o encontrado!";
+       throw "MEx Error: Painel n√£o encontrado!";
    }
 }
 
 /*
-* Esta funÁ„o remove completamente um painel e toda a sua funcionalidade
+* Esta fun√ß√£o remove completamente um painel e toda a sua funcionalidade
 */
 function __mkxRemovePanel(titulo) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var painel = $MEx("#mexPanel_" + reduceVariable(titulo));   
    
-   // Se o painel n„o foi encontrado tenta fechar localizar o prÛprio mainel
+   // Se o painel n√£o foi encontrado tenta fechar localizar o pr√≥prio mainel
    if(painel.length <= 0) {   
      if(parent.parent.$MEx) {
        painel = parent.parent.$MEx("#mexPanel_" + reduceVariable(titulo));
@@ -1969,16 +1969,16 @@ function __mkxRemovePanel(titulo) {
       painel.dialog("destroy");      
       painel.remove();
    } else {
-       throw "MEx Error: Painel n„o encontrado!";
+       throw "MEx Error: Painel n√£o encontrado!";
    }
 }
 
 /*
-* Esta funÁ„o muda a posiÁ„o de um painel criado
+* Esta fun√ß√£o muda a posi√ß√£o de um painel criado
 */
 function __mkxMovePanel(titulo, posicaoX, posicaoY, velocidade) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var painel = $MEx("#mexPanel_" + reduceVariable(titulo));   
 
    // Caso o componente seja encontrado
@@ -1995,16 +1995,16 @@ function __mkxMovePanel(titulo, posicaoX, posicaoY, velocidade) {
 		  painel.dialog("widget").css({ top: posicaoX, left: posicaoY});
 		}		 
    } else {
-       throw "MEx Error: Painel n„o encontrado!";
+       throw "MEx Error: Painel n√£o encontrado!";
    }
 }
 
 /*
-* Esta funÁ„o associa um fluxo a um evento do painel
+* Esta fun√ß√£o associa um fluxo a um evento do painel
 */
 function __mkxAssociatePanelEvent(titulo, nomeEvento, fluxo, parametros) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var painel = $MEx("#mexPanel_" + reduceVariable(titulo));   
 
    // Caso o componente seja encontrado
@@ -2019,24 +2019,24 @@ function __mkxAssociatePanelEvent(titulo, nomeEvento, fluxo, parametros) {
        }      
      });           
    } else {
-       throw "MEx Error: Painel n„o encontrado!";
+       throw "MEx Error: Painel n√£o encontrado!";
    }
 }
 
 /*
-* Esta funÁ„o adiciona botıes a um painel. Ao clicar neste bot„o, um fluxo È executado.
+* Esta fun√ß√£o adiciona bot√µes a um painel. Ao clicar neste bot√£o, um fluxo √© executado.
 */
 function __mkxAddPanelButton(titulo, textoBotao, fluxo, parametros) {
         
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var painel = $MEx("#mexPanel_" + reduceVariable(titulo));   
 
    // Caso o componente seja encontrado
    if(painel.size() > 0) {
-      // ObtÈm os botıes atuais      
+      // Obt√©m os bot√µes atuais      
       var buttons = painel.dialog("option", "buttons");
 
-      // adiciona o novo bot„o      
+      // adiciona o novo bot√£o      
       buttons[textoBotao] = function() {      
          executeJSRuleNoField(sysCode, idForm, fluxo, parametros);
       };      
@@ -2044,12 +2044,12 @@ function __mkxAddPanelButton(titulo, textoBotao, fluxo, parametros) {
       painel.dialog("option", "buttons", buttons);
    
    } else {
-       throw "MEx Error: Painel n„o encontrado!";
+       throw "MEx Error: Painel n√£o encontrado!";
    }
 }
 
 /*
-* Esta funÁ„o abre um painel flutuante (semelhante a uma janela)
+* Esta fun√ß√£o abre um painel flutuante (semelhante a uma janela)
 */
 function __mkxOpenHTMLPanel(titulo, conteudo, largura, altura, modal, propriedades) {
    // Importa as folhas de estilo 
@@ -2060,10 +2060,10 @@ function __mkxOpenHTMLPanel(titulo, conteudo, largura, altura, modal, propriedad
    mkxImportJs("apimakerextreme/commons/jquery/jquery.min.js");
    mkxImportJs("apimakerextreme/commons/jquery-ui/js/jquery-ui.min.js");   
       
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
    getLibraries();
       
-   // Verifica se j· existe o painel   
+   // Verifica se j√° existe o painel   
    var found = false;
    $MEx(".mexPanel").each(function() {
         if($MEx(this).attr("id") == ("mexPanel_" + reduceVariable(titulo))) {
@@ -2087,7 +2087,7 @@ function __mkxOpenHTMLPanel(titulo, conteudo, largura, altura, modal, propriedad
    if(!propriedades) {    
      // Inicializa as propriedades
      propriedades = {};                
-     // Define os valores padrıes
+     // Define os valores padr√µes
      propriedades.autoOpen = true;     
      propriedades.resizable = false; 
    }
@@ -2115,7 +2115,7 @@ function __mkxOpenHTMLPanel(titulo, conteudo, largura, altura, modal, propriedad
 }
 
 /*
-* Esta funÁ„o modifica a barra de padr„o do navegador, em Tabelas HTML, por uma nova barra de rolagem cross-browser e totalmente customiz·vel
+* Esta fun√ß√£o modifica a barra de padr√£o do navegador, em Tabelas HTML, por uma nova barra de rolagem cross-browser e totalmente customiz√°vel
 */
 function __mkxChangeTableScrollBar(formulario, componente, propriedades) {
    // Importa as folhas de estilo   
@@ -2127,15 +2127,15 @@ function __mkxChangeTableScrollBar(formulario, componente, propriedades) {
    webrun.include("apimakerextreme/plugins/scrollpane/jquery.jscrollpane.min.js");   
    webrun.include("apimakerextreme/plugins/scrollpane/jquery.mousewheel.js");
    
-   // FunÁ„o que valida a restriÁ„o de domÌnio    
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio    
    getLibraries();       
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);   
 
    // Caso o componente seja encontrado
    if(componente) {
-     // ObtÈm a div onde o scroll deve ser adicionado     
+     // Obt√©m a div onde o scroll deve ser adicionado     
      var div = component.div.firstChild;     
 
      // Cria o ScrollPanel
@@ -2168,10 +2168,10 @@ function __mkxSetAutocomplete(form, component, dados, propriedades) {
    mkxImportJs("apimakerextreme/commons/jquery/jquery.min.js");
    mkxImportJs("apimakerextreme/commons/jquery-ui/js/jquery-ui.min.js");   
    
-   // FunÁ„o que valida a restriÁ„o de domÌnio    
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio    
    getLibraries();       
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(component, form);
    
    if(component) { 
@@ -2179,7 +2179,7 @@ function __mkxSetAutocomplete(form, component, dados, propriedades) {
      // Prepara os dados
 	 var data;
 	 if(propriedades && propriedades.fluxo) {
-	   // Adiciona o termo buscado como primeiro par‚metro     
+	   // Adiciona o termo buscado como primeiro par√¢metro     
            var data = function(request, response) {
              var defaultParams = new Array();         
              defaultParams.push(request.term);  
@@ -2189,7 +2189,7 @@ function __mkxSetAutocomplete(form, component, dados, propriedades) {
                var campoChave;
 	       var campoLista;
 	       if(typeof(item) == "string") {
-	         // Se o retorno for string o campo chave È igual ao campo lista
+	         // Se o retorno for string o campo chave √© igual ao campo lista
                  campoChave = item;
                  campoLista = item;
 	       }       
@@ -2226,7 +2226,7 @@ function __mkxSetAutocomplete(form, component, dados, propriedades) {
 	 
                  }
 		 if(typeof(dados[0]) == "string") {
-		   // se for string, o array j· est· pronto
+		   // se for string, o array j√° est√° pronto
 		   data = dados;
 		 }
 	 }
@@ -2237,7 +2237,7 @@ function __mkxSetAutocomplete(form, component, dados, propriedades) {
 	 }
 	 propriedades.source = data;
 	 
-     // ObtÈm o input     
+     // Obt√©m o input     
      var input = component.input;
 
      $MEx(input).autocomplete(propriedades);
@@ -2245,7 +2245,7 @@ function __mkxSetAutocomplete(form, component, dados, propriedades) {
 }
 
 /*
-* Esta funÁ„o cria uma lista de propriedades para serem usadas nas funÁıes de "Painel" da API MakerExtreme
+* Esta fun√ß√£o cria uma lista de propriedades para serem usadas nas fun√ß√µes de "Painel" da API MakerExtreme
 */
 function __mkxCreateAutocompleteProperties(focarPrimeiro, fluxo, parametros, delay, tamanhoMinimo) {
    // Retorna um JSON com as propriedades  
@@ -2260,18 +2260,18 @@ function __mkxCreateAutocompleteProperties(focarPrimeiro, fluxo, parametros, del
 }
 
 function __mkxShowGridColumn(formulario, componente, coluna, mostrar) {
-   // ObtÈm o componente  
+   // Obt√©m o componente  
    var grid;   
 
    try {   
      grid = $c(componente, formulario);
    } catch(ex) {}  
 
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    if(!grid) { 
      grid = $MEx("#" + componente + "_table");     
      if(grid.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }   
 
    } else {   
@@ -2300,7 +2300,7 @@ function __mkxShowGridColumn(formulario, componente, coluna, mostrar) {
 
 function __mkxFindForm(formCode) {
     
-	// FunÁ„o que valida a restriÁ„o de domÌnio    
+	// Fun√ß√£o que valida a restri√ß√£o de dom√≠nio    
     getLibraries(); 
 	
 	// Retorna todos os elementos HTMLDocument encontrados
@@ -2320,7 +2320,7 @@ function __mkxFindForm(formCode) {
 		return array;
 	}
 	
-	// FunÁ„o recursiva que sai em busca de todos os elementos associados a IFRAME ou FRAME
+	// Fun√ß√£o recursiva que sai em busca de todos os elementos associados a IFRAME ou FRAME
 	// docs: Array do tipo HTMLDocument
 	var getAllChildWindows = function(docs) {
 		childDocuments = []
@@ -2359,7 +2359,7 @@ function __mkxFindForm(formCode) {
 		return childDocuments;
 	}
 	
-	// obtÈm todos os documentos encontrados na p·gina
+	// obt√©m todos os documentos encontrados na p√°gina
 	var foundDocs = getAllWindows();
 	var currentWin;
 	for(var i = 0; i < foundDocs.length; i++) {
@@ -2394,16 +2394,16 @@ function __mkxCreateAreaChart(formulario, componente, titulo, series, dados, pro
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2439,7 +2439,7 @@ function __mkxCreateAreaChart(formulario, componente, titulo, series, dados, pro
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -2487,16 +2487,16 @@ function __mkxCreateBarChart(formulario, componente, titulo, series, dados, prop
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2531,7 +2531,7 @@ function __mkxCreateBarChart(formulario, componente, titulo, series, dados, prop
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -2568,16 +2568,16 @@ function __mkxCreateColumnChart(formulario, componente, titulo, series, dados, p
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2612,7 +2612,7 @@ function __mkxCreateColumnChart(formulario, componente, titulo, series, dados, p
           
           component.chart.draw(data, component.chartOptions);        
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -2649,16 +2649,16 @@ function __mkxCreateGaugeChart(formulario, componente, titulo, series, dados, pr
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2693,7 +2693,7 @@ function __mkxCreateGaugeChart(formulario, componente, titulo, series, dados, pr
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -2729,16 +2729,16 @@ function __mkxCreateGeoChart(formulario, componente, titulo, series, dados, prop
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2773,7 +2773,7 @@ function __mkxCreateGeoChart(formulario, componente, titulo, series, dados, prop
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -2809,16 +2809,16 @@ function __mkxCreateGeoCityChart(formulario, componente, titulo, regiao, series,
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2855,7 +2855,7 @@ function __mkxCreateGeoCityChart(formulario, componente, titulo, regiao, series,
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
      if(!document.googleLoaded) document.googleLoaded = new Array(); 
@@ -2889,16 +2889,16 @@ function __mkxCreateLineChart(formulario, componente, titulo, series, dados, pro
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -2933,7 +2933,7 @@ function __mkxCreateLineChart(formulario, componente, titulo, series, dados, pro
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -2969,16 +2969,16 @@ function __mkxCreatePieChart(formulario, componente, titulo, series, dados, prop
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -3013,7 +3013,7 @@ function __mkxCreatePieChart(formulario, componente, titulo, series, dados, prop
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -3049,16 +3049,16 @@ function __mkxCreateSteppedAreaChart(formulario, componente, titulo, series, dad
 
          
       var __drawChart = function() {
-        // ObtÈm o componente   
+        // Obt√©m o componente   
         var component = $c(componente, formulario);   
     
         // Caso o componente seja encontrado
         if(component) {
-          // ObtÈm a div onde o scroll deve ser adicionado     
+          // Obt√©m a div onde o scroll deve ser adicionado     
           var div = component.div;
           div.innerHTML = '';  
              
-          // Prepara a lista de tÌtulos
+          // Prepara a lista de t√≠tulos
           var listaSeries = series.split(";");
          
           // concatena com a lista de dados
@@ -3093,7 +3093,7 @@ function __mkxCreateSteppedAreaChart(formulario, componente, titulo, series, dad
 
           component.chart.draw(data, component.chartOptions);         
         } else {
-          throw "MEx Error: Componente n„o encontrado";
+          throw "MEx Error: Componente n√£o encontrado";
         }
      };     
 
@@ -3124,7 +3124,7 @@ function __mkxAssociateChartEvent(formulario, componente, evento, fluxo, paramet
      return;
    }        
 
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);
    
    var executeFlow = function(e) {
@@ -3169,19 +3169,19 @@ function __mkxAssociateChartEvent(formulario, componente, evento, fluxo, paramet
 
    // Caso o componente seja encontrado
    if(component && component.chart) {
-       // ObtÈm o gr·fico
+       // Obt√©m o gr√°fico
        var grafico = component.chart;        
 
        // Associa os eventos
        google.visualization.events.addListener(grafico, evento, executeFlow); 
 
    } else {
-     // Guarda o evento para ser associado quando o gr·fico estiver pronto   
+     // Guarda o evento para ser associado quando o gr√°fico estiver pronto   
      if(component && !component.chart) {
        if(!component.registeredEvents) component.registeredEvents = new Array();       
          component.registeredEvents.push([evento,executeFlow]);
      } else {
-         throw "Gr·fico n„o localizado!";
+         throw "Gr√°fico n√£o localizado!";
      }
    } 
   }  
@@ -3209,7 +3209,7 @@ function mkxFlowExecute(ruleName, params) {
     }
   } else {
     var ruleInstance = new ruleFunction(null, sysCode, formCode);
-    if (ruleInstance && ruleInstance.run) { // È JS
+    if (ruleInstance && ruleInstance.run) { // √© JS
       value = executeJSRuleNoField(sysCode, formCode, ruleName, params, true);
     }
   } 
@@ -3218,21 +3218,21 @@ function mkxFlowExecute(ruleName, params) {
 
 function __mkxAddChartData(formulario, componente, valores) {       
 	
-   // ObtÈm o componente   
+   // Obt√©m o componente   
    var component = $c(componente, formulario);
 
    // Caso o componente seja encontrado
    if(component && component.chart) {
-       // ObtÈm o gr·fico
+       // Obt√©m o gr√°fico
        var grafico = component.chart;        
 
        // Adiciona a linha
        component.dataTable.addRow(valores); 
 
-       // Redesenha o gr·fico
+       // Redesenha o gr√°fico
       grafico.draw(component.dataTable, component.chartOptions);
    } else {
-     throw "Gr·fico n„o localizado!";
+     throw "Gr√°fico n√£o localizado!";
    } 
         
 }
@@ -3255,14 +3255,14 @@ function __mkxCreateCKE(formulario, moldura, isReadOnly, tools){
   // Importa a biblioteca
   webrun.include('apimakerextreme/plugins/ckeditor/ckeditor.js');
  
-  // Valida a restriÁ„o de domÌnio
+  // Valida a restri√ß√£o de dom√≠nio
   getLibraries();
    
   // Cria os containers
   var CKEditorDiv = document.createElement("div");      
   var CKEditor = document.createElement("textarea"); 
  
-  // ObtÈm a div do componente
+  // Obt√©m a div do componente
   var molduraDiv = $c(moldura, formulario).div;               
   var altura;         
  
@@ -3273,7 +3273,7 @@ function __mkxCreateCKE(formulario, moldura, isReadOnly, tools){
   // Ajusta o zIndex 
   CKEditorDiv.style.zIndex = 999999999;        
  
-  // Limpa o conte˙do da moldura
+  // Limpa o conte√∫do da moldura
   molduraDiv.innerHTML = "";
  
   // adiciona o CKEditor na moldura
@@ -3282,7 +3282,7 @@ function __mkxCreateCKE(formulario, moldura, isReadOnly, tools){
   altura = altura-124;
               
   if(!isNullOrEmpty(tools)){
-   // configuraÁıes iniciais do CKEditor
+   // configura√ß√µes iniciais do CKEditor
    CKEDITOR.config.scayt_autoStartup = true;
    CKEDITOR.config.disableNativeSpellChecker = false;
    // se o CKEditor ja existir, remove ele e cria novamente
@@ -3302,7 +3302,7 @@ function __mkxCreateCKE(formulario, moldura, isReadOnly, tools){
 }
 
 /*
-* ObtÈm o valor de um componente CKEditor
+* Obt√©m o valor de um componente CKEditor
 */
 function __mkxGetDataCKE(formulario, idCKEditor) {         
   return CKEDITOR.instances[idCKEditor].getData();
@@ -3312,7 +3312,7 @@ function __mkxGetDataCKE(formulario, idCKEditor) {
 * Altera o valor de um componente CKEditor
 */
 function __mkxSetDataCKE(formulario, idCKEditor,texto) { 
-  // Verifica se o CKEditor ainda n„o est· pronto
+  // Verifica se o CKEditor ainda n√£o est√° pronto
   if(!CKEDITOR || !CKEDITOR.instances || CKEDITOR.instances.length == 0) {
        // Associa um evento para que o CKEditor seja alterado quando estiver pronto
        CKEDITOR.on( 'instanceReady', function( ev )
@@ -3320,13 +3320,13 @@ function __mkxSetDataCKE(formulario, idCKEditor,texto) {
          CKEDITOR.instances[idCKEditor].setData(texto);      
        });
   } else {
-     // Altera o CKEditor imediatamente caso ele j· esteja pronto
+     // Altera o CKEditor imediatamente caso ele j√° esteja pronto
      CKEDITOR.instances[idCKEditor].setData(texto);
   }         
 }
 
 /*
-* Cria uma grade em forma de ·rvore
+* Cria uma grade em forma de √°rvore
 */
 function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, listaDados, multiSelect, paging) {
   //importar css                                                                        
@@ -3340,22 +3340,22 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
   mkxImportJs("apimakerextreme/plugins/jq-grid/js/grid.locale-pt-br.js");
   mkxImportJs("apimakerextreme/plugins/jq-grid/js/jquery.jqGrid.min.js");
   
-  // Valida a restriÁ„o de domÌnio
+  // Valida a restri√ß√£o de dom√≠nio
   getLibraries();  
     
-  // ObtÈm o componente  
+  // Obt√©m o componente  
    var component;   
 
    try {   
      component = $c(componente, formulario);
    } catch(ex) {}  
    
-   // Caso o componente n„o seja encontrado
+   // Caso o componente n√£o seja encontrado
    var gridComp;
    if(!component) { 
      gridComp = $MEx("#" + componente);     
      if(gridComp.size() == 0) {
-       throw "MEx error: Container n„o encontrado";
+       throw "MEx error: Container n√£o encontrado";
      }
      gridComp.attr("class","mexGrid");     
      gridComp.html("<table id=\""+ gridComp.attr("id") +"_table\" class=\"mexGridTable\"></table>");     
@@ -3374,15 +3374,15 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
    component.div.savedData["multiSelect"] = multiSelect;
    component.div.savedData["paging"] = paging;
    
-   if(!listaColunas) throw "MEx error: A definiÁ„o de colunas n„o foi informada";
-   if(!listaDados) throw "MEx error: A fonte de dados n„o foi informada";   
+   if(!listaColunas) throw "MEx error: A defini√ß√£o de colunas n√£o foi informada";
+   if(!listaDados) throw "MEx error: A fonte de dados n√£o foi informada";   
 
    // Prepara as listas de colunas   
    var columnNames = new Array();   
    var columnModel = new Array();    
       
    // Adiciona o ID   
-   // Adiciona a lista de definiÁıes   
+   // Adiciona a lista de defini√ß√µes   
    columnNames.push("ID");
    columnModel.push({     
      key: true,
@@ -3399,7 +3399,7 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
      var currentDef = listaColunas[i].split(";");     
      // Adiciona o nome na lista de nomes
      columnNames.push(currentDef[0]);
-     // Adiciona a lista de definiÁıes
+     // Adiciona a lista de defini√ß√µes
 	 
 	 
 	 var columnModelObj ={     
@@ -3424,25 +3424,25 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
 
 
    //ORDENA A LISTA
-   /* Ordena a lista a ajusta os nÌveis */	
+   /* Ordena a lista a ajusta os n√≠veis */	
    function organizeTreeList(listObj) {                  
      var DadosFinal=[];
      if(listObj == null) return null;            
 
-     // FunÁ„o recursiva que organiza a lista
+     // Fun√ß√£o recursiva que organiza a lista
      var _organizeChildrenList = function(listObj, objPai, nivel) {
        // Varre os elementos da lista de origem        
        for(var i = 0; i < listObj.length; i++) {            
-         // Verifica se o id do pai È o que est· sendo procurado             
+         // Verifica se o id do pai √© o que est√° sendo procurado             
          if(listObj[i][1] == objPai[0]) {               
-           // ObtÈm o objeto atual
+           // Obt√©m o objeto atual
            var currentLine = listObj[i];           
-           // Ajusta o nÌvel                
+           // Ajusta o n√≠vel                
            currentLine = __mkxSetElementAtList(currentLine,nivel,3);           
 
            // Define o elemento atual como folha
            currentLine.push(true);
-           // Define que o elemento pai n„o È folha           
+           // Define que o elemento pai n√£o √© folha           
            objPai[objPai.length - 1] = false;
                            
            // Adiciona o elemento atual na lista final
@@ -3453,7 +3453,7 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
        }
      }                                           
    
-     // Inicia a busca pelos elementos sem pai com nÌvel zero
+     // Inicia a busca pelos elementos sem pai com n√≠vel zero
      _organizeChildrenList(listObj,["",true],0);
      return DadosFinal;                          
    }
@@ -3470,8 +3470,8 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
      dados[i]["isLeaf"] = listaDados[i][listaDados[i].length - 1];
      dados[i]["expanded"] = false;     
      dados[i]["loaded"] = true;
-     // A posiÁ„o de 0 a 3 s„o dados de configuraÁ„o da grade
-     // o restante s„o as colunas definidas por usu·rio (da posiÁ„o 4 para frente)    
+     // A posi√ß√£o de 0 a 3 s√£o dados de configura√ß√£o da grade
+     // o restante s√£o as colunas definidas por usu√°rio (da posi√ß√£o 4 para frente)    
      for(var j = 3; j < listaDados[i].length - 1; j++) {
          dados[i][reduceVariable(columnNames[j - 2]).toString()] = listaDados[i][j];
      }
@@ -3513,7 +3513,7 @@ function __mkxCreateTreeGrid(formulario, componente, titulo, listaColunas, lista
 }
 
 /*
-* FunÁ„o que adiciona um objeto na liste (modificada para corrigir um BUG do Maker)
+* Fun√ß√£o que adiciona um objeto na liste (modificada para corrigir um BUG do Maker)
 */
 function __mkxSetElementAtList() {
   var value = null;
@@ -3573,7 +3573,7 @@ function __mkxSimpleAlert(titulo, mensagem) {
 
 
 /*
-* Cria uma janela de alerta con confirmaÁ„o
+* Cria uma janela de alerta con confirma√ß√£o
 */
 function __mkxConfirmAlert(titulo, mensagem, fluxo) { 
 
@@ -3584,7 +3584,7 @@ function __mkxConfirmAlert(titulo, mensagem, fluxo) {
   mkxImportJs("apimakerextreme/plugins/jq-alerts/jquery.alerts.js");
 
 //Chama o alerta
-   jConfirm(mensagem, (isNullOrEmpty(titulo)) ? "ConfirmaÁ„o":titulo, function(r){executeJSRuleNoField(sysCode, idForm, fluxo,[r]);});
+   jConfirm(mensagem, (isNullOrEmpty(titulo)) ? "Confirma√ß√£o":titulo, function(r){executeJSRuleNoField(sysCode, idForm, fluxo,[r]);});
    
 }
 
@@ -3600,12 +3600,12 @@ function __mkxPromptAlert(titulo, mensagem, fluxo) {
   mkxImportJs("apimakerextreme/plugins/jq-alerts/jquery.alerts.js");
 
 //Chama o alerta
-   jPrompt(mensagem, null, (isNullOrEmpty(titulo)) ? "ConfirmaÁ„o":titulo, function(r){executeJSRuleNoField(sysCode, idForm, fluxo,[r]);});
+   jPrompt(mensagem, null, (isNullOrEmpty(titulo)) ? "Confirma√ß√£o":titulo, function(r){executeJSRuleNoField(sysCode, idForm, fluxo,[r]);});
    
 }
 
 /*
-* Abre um formul·rio como Spin
+* Abre um formul√°rio como Spin
 */
 function __mkxCreateFormSpin(formularioDestino, modo, filtro, tamanho) { 
 
@@ -3631,17 +3631,17 @@ function __mkxCreateFormSpin(formularioDestino, modo, filtro, tamanho) {
 }
 
 /*
-* Remove formul·rio do Spin
+* Remove formul√°rio do Spin
 */
 function __mkxRemoveFormSpin(formularioDestino) { 
-	//Remove formul·rio
+	//Remove formul√°rio
 	$MEx('#lay').animate({"left":"0px"},function(){  $MEx('#spinDiv_'+formularioDestino.replace("{","").replace("}","")).remove()});
 
 }
 
 
 /*
-* FunÁ„o que cria o DashBoard
+* Fun√ß√£o que cria o DashBoard
 */
 function __mkxCreateDashboard(formulario, componente) {
    mkxImportCss("apimakerextreme/commons/jquery-ui/css/jquery-ui.min.css");         
@@ -3653,7 +3653,7 @@ function __mkxCreateDashboard(formulario, componente) {
    
    ebfCSSImportContent(".portletFrame{border:0px};div.portlet{display: inline-block;margin:3px;padding:1px;float:left;height:100px}.portlet{vertical-align: top; border-radius: 0px !important;float:left; margin-right: 10px; margin-top: 10px;; overflow:hidden !important;};.portlet-minimized{height:auto!important};.portlet-header{margin:.3em;padding-bottom:4px;padding-left:.2em}.portlet-header .ui-icon{float:right}.portlet-content{padding:.4em}.portlet-minimized .portlet-content{display:none!important}.ui-sortable-placeholder{border:1px dotted black;visibility:visible!important;height:50px!important}.ui-sortable-placeholder *{visibility:hidden}")
    
-   // FunÁ„o que valida a restriÁ„o de domÌnio
+   // Fun√ß√£o que valida a restri√ß√£o de dom√≠nio
    getLibraries();
       
    var component = $c(componente, formulario);    
