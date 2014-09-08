@@ -2919,8 +2919,7 @@ function __mkxCreateCKE(formulario, moldura, isReadOnly, tools){
  
   // adiciona o CKEditor na moldura
   molduraDiv.appendChild(CKEditorDiv);             
-  altura = $MEx(molduraDiv).height();             
-  altura = altura-124;
+  altura = (parseInt($MEx(molduraDiv).hiddenDimension("height")-124))            
               
   if(!isNullOrEmpty(tools)){
    // configurações iniciais do CKEditor
